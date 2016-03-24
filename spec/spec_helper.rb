@@ -1,21 +1,21 @@
-if ENV.fetch('CI', false)
-  require 'codeclimate-test-reporter'
+if ENV.fetch("CI", false)
+  require "codeclimate-test-reporter"
   CodeClimate::TestReporter.start
 end
 
-if ENV.fetch('COVERAGE', false)
-  require 'simplecov'
-  SimpleCov.start 'rails' do
-    add_filter '/spec/'
-    coverage_dir 'tmp/coverage'
+if ENV.fetch("COVERAGE", false)
+  require "simplecov"
+  SimpleCov.start "rails" do
+    add_filter "/spec/"
+    coverage_dir "tmp/coverage"
   end
 end
 
-require 'rubygems'
-require 'bundler/setup'
+require "rubygems"
+require "bundler/setup"
 Bundler.require(:default)
 
-Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].sort.each { |file| require file }
+Dir[File.join(File.dirname(__FILE__), "support/**/*.rb")].sort.each { |file| require file }
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -27,7 +27,7 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  config.example_status_persistence_file_path = 'tmp/rspec_examples.txt'
+  config.example_status_persistence_file_path = "tmp/rspec_examples.txt"
   config.order = :random
 
   config.raise_errors_for_deprecations!

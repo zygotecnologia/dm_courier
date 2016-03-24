@@ -6,11 +6,11 @@ module RailsCourier
       end
 
       def api_key
-        ENV['RAILS_COURIER_API_KEY']
+        ENV["RAILS_COURIER_API_KEY"]
       end
 
       def service
-        ENV['RAILS_COURIER_SERVICE']
+        ENV["RAILS_COURIER_SERVICE"]
       end
     end
   end

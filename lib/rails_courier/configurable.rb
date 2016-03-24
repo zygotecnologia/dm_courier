@@ -1,4 +1,4 @@
-require 'rails_courier/default'
+require "rails_courier/default"
 
 module RailsCourier
   module Configurable

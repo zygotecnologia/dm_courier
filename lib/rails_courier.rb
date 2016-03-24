@@ -1,5 +1,5 @@
-require 'rails_courier/version'
-require 'rails_courier/configurable'
+require "rails_courier/version"
+require "rails_courier/configurable"
 
 module RailsCourier
   class << self
