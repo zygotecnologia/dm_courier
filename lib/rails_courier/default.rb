@@ -9,7 +9,7 @@ module RailsCourier
         ENV["RAILS_COURIER_API_KEY"]
       end
 
-      def service
+      def service_name
         ENV["RAILS_COURIER_SERVICE"]
       end
     end

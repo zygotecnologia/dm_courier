@@ -41,8 +41,8 @@ key, don't forget to create one.
 
 Option     | Default value     | Description
 -----------|-------------------|------------------------------------------------------------
-`api_key`  | ENV['RAILS_COURIER_API_KEY'] | Your service API key
-`service`  | ENV['RAILS_COURIER_SERVICE'] | Your service API name. See [#Supported Services] for more information
+`api_key`       | ENV['RAILS_COURIER_API_KEY'] | Your service API key
+`service_name`  | ENV['RAILS_COURIER_SERVICE'] | Your service API name. See [#Supported Services] for more information
 
 ## Development & Feedback
 

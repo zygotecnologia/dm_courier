@@ -2,11 +2,11 @@ require "rails_courier/default"
 
 module RailsCourier
   module Configurable
-    attr_accessor :service, :api_key
+    attr_accessor :api_key, :service_name
 
     class << self
       def keys
-        @keys ||= [:api_key, :service]
+        @keys ||= [:api_key, :service_name]
       end
     end
 

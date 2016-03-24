@@ -103,6 +103,14 @@ Style/SingleLineBlockParams:
   - inject:
     - a
     - e
+Style/CollectionMethods:
+  Description: Preferred collection methods.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#map-find-select-reduce-size
+  Enabled: true
+  PreferredMethods:
+    collect: map
+    collect!: map!
+    reduce: inject
 
 Style/SingleLineMethods:
   Description: Avoid single-line methods.
@@ -222,7 +230,7 @@ Style/DoubleNegation:
 
 Style/EachWithObject:
   Description: Prefer `each_with_object` over `inject` or `reduce`.
-  Enabled: true
+  Enabled: false
 
 Style/EmptyLiteral:
   Description: Prefer literals to Array.new/Hash.new/String.new.

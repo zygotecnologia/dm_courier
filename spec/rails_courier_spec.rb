@@ -26,4 +26,21 @@ describe RailsCourier do
       end
     end
   end
+
+  describe ".delivery_method" do
+    it "creates a delivery method" do
+      expect(RailsCourier.delivery_method).to be_kind_of(RailsCourier::DeliveryMethod)
+    end
+
+    it "cache the delivery method with the same options passed" do
+      expect(RailsCourier.delivery_method).to be(RailsCourier.delivery_method)
+    end
+
+    it "returns a fresh delivery method when options are not the same" do
+      dm = RailsCourier.delivery_method
+      RailsCourier.api_key = "4321"
+      dm_two = RailsCourier.delivery_method
+      expect(dm).not_to eq(dm_two)
+    end
+  end
 end
