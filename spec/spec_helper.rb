@@ -13,7 +13,6 @@ end
 
 require 'rubygems'
 require 'bundler/setup'
-require 'webmock/rspec'
 Bundler.require(:default)
 
 Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].sort.each { |file| require file }
@@ -34,5 +33,3 @@ RSpec.configure do |config|
   config.raise_errors_for_deprecations!
   config.run_all_when_everything_filtered = true
 end
-
-WebMock.disable_net_connect!(allow_localhost: true)
