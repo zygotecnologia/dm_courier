@@ -48,7 +48,7 @@ describe RailsCourier::DeliveryMethod do
   end
 
   describe "#deliver!" do
-    let(:mail) { double("Mail") }
+    let(:mail) { instance_double(Mail::Message) }
 
     subject { described_class.new(service_name: :fake_service) }
 
@@ -67,7 +67,7 @@ describe RailsCourier::DeliveryMethod do
     end
 
     it "wrap the mail within a message" do
-      expect(subject.service).to receive(:deliver!).with(a_message_of_mail(mail))
+      expect(subject.service).to receive(:deliver!).with(mail)
 
       subject.deliver!(mail)
     end

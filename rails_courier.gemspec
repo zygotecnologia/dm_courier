@@ -24,9 +24,12 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.2.0"
   spec.required_rubygems_version = ">= 2.4.5"
 
+  spec.add_dependency "mandrill-api", "~> 1.0.53"
+
   spec.add_development_dependency "codeclimate-test-reporter", "~> 0.5"
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rspec", "~> 3.4"
+  spec.add_development_dependency "mail", "~> 2.6"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "simplecov", "~> 0.11"
   spec.add_development_dependency "rubocop", "~> 0.36"

@@ -12,6 +12,10 @@ module RailsCourier
       def service_name
         ENV["RAILS_COURIER_SERVICE"]
       end
+
+      def async
+        false
+      end
     end
   end
 end

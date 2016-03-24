@@ -1,5 +1,4 @@
 require "rails_courier/service_locator"
-require "rails_courier/message"
 
 module RailsCourier
   class DeliveryMethod
@@ -16,9 +15,7 @@ module RailsCourier
     end
 
     def deliver!(mail)
-      message = RailsCourier::Message.new(mail)
-
-      @response = service.deliver!(message)
+      @response = service.deliver!(mail)
     end
   end
 end

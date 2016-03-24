@@ -1,12 +1,10 @@
+require "rails_courier/services/mandrill"
+
 module RailsCourier
   module ServiceLocator
     def service
       @service ||= begin
                      raise RailsCourier::InvalidService unless @service_name
-
-                     options = RailsCourier::Configurable.keys.map do |key|
-                       [key, instance_variable_get(:"@#{key}")]
-                     end
 
                      constantize(@service_name).new(options)
                    end
