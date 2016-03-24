@@ -15,6 +15,8 @@ require "rubygems"
 require "bundler/setup"
 Bundler.require(:default)
 
+require "mail"
+
 Dir[File.join(File.dirname(__FILE__), "support/**/*.rb")].sort.each { |file| require file }
 
 RSpec.configure do |config|
