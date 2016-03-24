@@ -3,6 +3,8 @@ require "rails_courier/errors"
 require "rails_courier/configurable"
 require "rails_courier/delivery_method"
 
+require "rails_courier/railtie" if defined? Rails
+
 module RailsCourier
   class << self
     include RailsCourier::Configurable
