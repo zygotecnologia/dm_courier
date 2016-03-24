@@ -1,0 +1,15 @@
+language: ruby
+sudo: false
+rvm:
+- 2.2
+- 2.3.0
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+addons:
+  code_climate:
+    repo_token: e3eac13dabf5af3f7cd993b869ae5bce1cee735332537815badda3fd4ee2fc28
+script:
+- bundle exec rubocop
+- bundle exec rake spec

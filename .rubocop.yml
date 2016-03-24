@@ -1,0 +1,13 @@
+AllCops:
+  TargetRubyVersion: 2.2
+  Exclude:
+    - "Gemfile"
+
+SignalException:
+  EnforcedStyle: semantic
+
+LineLength:
+  Max: 120
+
+Style/Documentation:
+  Enabled: false
