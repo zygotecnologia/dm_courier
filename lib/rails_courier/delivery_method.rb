@@ -15,7 +15,7 @@ module RailsCourier
     end
 
     def deliver!(mail)
-      @response = service.deliver!(mail)
+      @response = service.new(mail, options).deliver!
     end
   end
 end

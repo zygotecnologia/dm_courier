@@ -50,7 +50,19 @@ describe RailsCourier::DeliveryMethod do
   describe "#deliver!" do
     let(:mail) { instance_double(Mail::Message) }
 
+    before do
+      @options = {}
+      RailsCourier.configure do |config|
+        RailsCourier::Configurable.keys.each do |key|
+          @options[key] = "Some #{key}"
+          config.send("#{key}=", "Some #{key}")
+        end
+      end
+      @options[:service_name] = :fake_service
+    end
+
     subject { described_class.new(service_name: :fake_service) }
+    let(:fake_service) { instance_double(RailsCourier::Services::FakeService, deliver!: "response") }
 
     it "raises when service is not defined" do
       dm = RailsCourier::DeliveryMethod.new(service_name: nil)
@@ -66,14 +78,14 @@ describe RailsCourier::DeliveryMethod do
         .to raise_error(RailsCourier::InvalidService)
     end
 
-    it "wrap the mail within a message" do
-      expect(subject.service).to receive(:deliver!).with(mail)
+    it "instantiates the service" do
+      expect(RailsCourier::Services::FakeService).to receive(:new).with(mail, @options).and_return(fake_service)
 
       subject.deliver!(mail)
     end
 
     it "put the response on the response variable" do
-      expect(subject.service).to receive(:deliver!).and_return("response")
+      expect(RailsCourier::Services::FakeService).to receive(:new).and_return(fake_service)
 
       subject.deliver!(mail)
 

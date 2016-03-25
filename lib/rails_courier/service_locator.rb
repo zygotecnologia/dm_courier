@@ -6,7 +6,7 @@ module RailsCourier
       @service ||= begin
                      raise RailsCourier::InvalidService unless @service_name
 
-                     constantize(@service_name).new(options)
+                     constantize(@service_name)
                    end
     rescue NameError => e
       raise RailsCourier::InvalidService, e
