@@ -72,6 +72,10 @@ module RailsCourier
       def tags
         nil
       end
+
+      def from
+        nil
+      end
     end
   end
 end

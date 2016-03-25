@@ -56,6 +56,7 @@ Option     | Mailer Support | Description
 `api_key`  | false | Your service API key<br />**Default:** `ENV['RAILS_COURIER_API_KEY']`
 `service_name`  | false | Your service API name.<br />**Default:** `ENV['RAILS_COURIER_SERVICE']`
 `async` | false | If the message with be sent asynchronous (depends on the service support)<br />**Default:** false<br />**Services:** mandrill
+`from` | true | A default from address for all emails<br />**Services:** all
 `auto_html` | true |  whether or not to automatically generate an HTML part for messages that are not given HTML<br />**Services:** mandrill
 `auto_text` | true | whether or not to automatically generate a text part for messages that are not given text<br />**Services:** mandrill
 `important` | true | whether or not this message is important, and should be delivered ahead of non-important messages<br />**Default**: false<br />**Services:** mandrill
