@@ -60,17 +60,32 @@ Option     | Mailer Support | Description
 `auto_html` | true |  whether or not to automatically generate an HTML part for messages that are not given HTML<br />**Services:** mandrill
 `auto_text` | true | whether or not to automatically generate a text part for messages that are not given text<br />**Services:** mandrill
 `important` | true | whether or not this message is important, and should be delivered ahead of non-important messages<br />**Default**: false<br />**Services:** mandrill
-`inline_css`  | true | whether or not to automatically inline all CSS styles provided in the message HTML - only for HTML documents less than 256KB in size<br />**Services:** mandrill
-`track_clicks` | true | whether or not to turn on click tracking for the message<br />**Services:** mandrill
-`track_opens` | true | whether or not to turn on open tracking for the message<br />**Services:** mandrill
+`inline_css`  | true | whether or not to automatically inline all CSS styles provided in the message HTML - only for HTML documents less than 256KB in size<br />**Services:** mandrill, sparkpost
+`track_clicks` | true | whether or not to turn on click tracking for the message<br />**Services:** mandrill, sparkpost
+`track_opens` | true | whether or not to turn on open tracking for the message<br />**Services:** mandrill, sparkpost
 `track_url_without_query_string` | true | whether or not to strip the query string from URLs when aggregating tracked URL data<br />**Services:** mandrill
 `log_content` | true  |  set to false to remove content logging for sensitive emails<br />**Services:** mandrill
 `bcc_address` | true  | an optional address to receive an exact copy of each recipient's email<br />**Services:** mandrill
-`return_path_domain` | true | a custom domain to use for the messages's return-path<br />**Services:** mandrill
+`return_path_domain` | true | a custom domain to use for the messages's return-path<br />**Services:** mandrill, sparkpost
 `signing_domain` | true | a custom domain to use for SPF/DKIM signing (for "via" or "on behalf of" in email clients)<br />**Services:** mandrill
 `subaccount` | true  | the unique id of a subaccount - must already exist or will fail with an error<br />**Services:** mandrill
 `tracking_domain` | true | a custom domain to use for tracking opens and clicks<br />**Services:** mandrill
 `tags` | true | an array of string to tag the message with. Stats are accumulated using tags, though we only store the first 100 we see, so this should not be unique or change frequently. Tags should be 50 characters or less. Any tags starting with an underscore are reserved for internal use and will cause errors.<br />**Services:** mandrill
+
+## Services
+
+### Mandrill
+
+### SparkPost
+
+The options were choosen to create an abstraction layer above the original
+service API. Because of that some options have different names:
+
+- **return_path_domain**: Is called **return_path** on SparkPost
+- **track_opens**: Is called **open_tracking** on SparkPost
+- **track_clicks**: Is called **click_tracking** on SparkPost
+
+> TODO: Sparkpost service implementation does not support BCC emails yet.
 
 ## Development & Feedback
 

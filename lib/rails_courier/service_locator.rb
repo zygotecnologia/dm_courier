@@ -1,4 +1,5 @@
 require "rails_courier/services/mandrill"
+require "rails_courier/services/sparkpost"
 
 module RailsCourier
   module ServiceLocator
