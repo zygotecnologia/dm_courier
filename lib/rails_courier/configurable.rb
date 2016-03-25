@@ -27,8 +27,6 @@ module RailsCourier
       opts.hash == options.hash
     end
 
-    private
-
     def options
       Hash[RailsCourier::Configurable
            .keys.map { |key| [key, instance_variable_get(:"@#{key}")] }]
