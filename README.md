@@ -30,7 +30,7 @@ paste in the following code:
 ```ruby
 RailsCourier.configure do |config|
   config.api_key = ENV['RAILS_COURIER_APIKEY']
-  config.api = :sparkpost # Choose here the service you want to use
+  config.service_name = :mandrill # Choose here the service you want to use
 end
  ```
 
