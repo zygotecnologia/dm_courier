@@ -13,6 +13,7 @@ module RailsCourier
                               RailsCourier.instance_variable_get(:"@#{key}"))
       end
     end
+    alias settings options
 
     def deliver!(mail)
       @response = service.new(mail, options).deliver!
