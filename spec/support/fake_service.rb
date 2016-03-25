@@ -1,19 +1,19 @@
 module RailsCourier
   module Services
     class FakeService
-      attr_reader :messages, :options
+      attr_reader :mail, :options
 
-      def initialize(options)
+      def initialize(mail, options)
         @options = options
-        @messages = []
+        @mail = mail
       end
 
       def name
         :fake_service
       end
 
-      def deliver!(message)
-        @messages.push(message)
+      def deliver!
+        true
       end
     end
   end
