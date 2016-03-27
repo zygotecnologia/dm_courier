@@ -7,8 +7,9 @@
 [![Test Coverage](https://codeclimate.com/github/sumoners/dm_courier/badges/coverage.svg)](https://codeclimate.com/github/sumoners/dm_courier/coverage)
 [![Code Climate](https://codeclimate.com/github/sumoners/dm_courier/badges/gpa.svg)](https://codeclimate.com/github/sumoners/dm_courier)
 
-Stick with just one Gem and be free to choose your email delivery service. Rails
-Courier allows you to change easily the deliery method anytime you want.
+Stick with just one Gem and be free to choose your email delivery service.  DM
+Courier (Delivery Method Courier) allows you to easily change the deliery method
+as you wish.
 
 ## Rails Setup
 
