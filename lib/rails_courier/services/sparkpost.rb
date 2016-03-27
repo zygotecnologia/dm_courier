@@ -1,6 +1,7 @@
 require "sparkpost"
 require "base64"
 
+require "monkey_patch/sparkpost/request"
 require "rails_courier/message_helper"
 
 module RailsCourier
