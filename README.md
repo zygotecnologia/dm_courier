@@ -66,7 +66,7 @@ Option     | Mailer Support | Description
 `track_opens` | true | whether or not to turn on open tracking for the message<br />**Services:** mandrill, sparkpost
 `track_url_without_query_string` | true | whether or not to strip the query string from URLs when aggregating tracked URL data<br />**Services:** mandrill
 `log_content` | true  |  set to false to remove content logging for sensitive emails<br />**Services:** mandrill
-`bcc_address` | true  | an optional address to receive an exact copy of each recipient's email<br />**Services:** mandrill
+`bcc_address` | true  | an optional address to receive an exact copy of each recipient's email<br />**Services:** mandrill, sendgrid
 `return_path_domain` | true | a custom domain to use for the messages's return-path<br />**Services:** mandrill, sparkpost
 `signing_domain` | true | a custom domain to use for SPF/DKIM signing (for "via" or "on behalf of" in email clients)<br />**Services:** mandrill
 `subaccount` | true  | the unique id of a subaccount - must already exist or will fail with an error<br />**Services:** mandrill
@@ -87,6 +87,8 @@ service API. Because of that some options have different names:
 - **track_clicks**: Is called **click_tracking** on SparkPost
 
 > TODO: Sparkpost service implementation does not support BCC emails yet.
+
+### SendGrid
 
 ## Development & Feedback
 

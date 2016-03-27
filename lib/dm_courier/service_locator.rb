@@ -1,5 +1,6 @@
 require "dm_courier/services/mandrill"
 require "dm_courier/services/sparkpost"
+require "dm_courier/services/sendgrid"
 
 module DMCourier
   module ServiceLocator
