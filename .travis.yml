@@ -9,7 +9,7 @@ notifications:
     on_failure: always
 addons:
   code_climate:
-    repo_token: e3eac13dabf5af3f7cd993b869ae5bce1cee735332537815badda3fd4ee2fc28
+    repo_token: 40f3b0db4e0b69a31588221de4aaca19db947e47c838f9eac9b6f4615cf92bab
 script:
 - bundle exec rubocop
 - bundle exec rake spec
