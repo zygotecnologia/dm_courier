@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RailsCourier::Services::Mandrill do
+describe DMCourier::Services::Mandrill do
   let(:mail) { instance_double(Mail::Message) }
   let(:options) { { api_key: "1234" } }
 

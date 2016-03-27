@@ -1,16 +1,16 @@
-module RailsCourier
+module DMCourier
   module Default
     class << self
       def options
-        Hash[RailsCourier::Configurable.keys.map { |key| [key, send(key)] }]
+        Hash[DMCourier::Configurable.keys.map { |key| [key, send(key)] }]
       end
 
       def api_key
-        ENV["RAILS_COURIER_API_KEY"]
+        ENV["DM_COURIER_API_KEY"]
       end
 
       def service_name
-        ENV["RAILS_COURIER_SERVICE"]
+        ENV["DM_COURIER_SERVICE"]
       end
 
       def async

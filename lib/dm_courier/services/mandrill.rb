@@ -1,12 +1,12 @@
 require "mandrill"
 require "base64"
 
-require "rails_courier/message_helper"
+require "dm_courier/message_helper"
 
-module RailsCourier
+module DMCourier
   module Services
     class Mandrill
-      include RailsCourier::Services::MessageHelper
+      include DMCourier::Services::MessageHelper
 
       attr_reader :api_key, :async, :mail, :options
 

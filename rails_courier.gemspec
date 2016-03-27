@@ -1,16 +1,16 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "rails_courier/version"
+require "dm_courier/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "rails_courier"
-  spec.version       = RailsCourier::VERSION.dup
+  spec.name          = "dm_courier"
+  spec.version       = DMCourier::VERSION.dup
   spec.authors       = ["Jaison Erick"]
   spec.email         = ["jaisonreis@gmail.com"]
 
   spec.summary       = "A delivery method that abstract the most common email delivery APIs"
   spec.description   = "A delivery method that abstract the most common email delivery APIs"
-  spec.homepage      = "http://github.com/sumoners/rails_courier"
+  spec.homepage      = "http://github.com/sumoners/dm_courier"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`

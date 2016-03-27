@@ -1,4 +1,4 @@
-module RailsCourier
+module DMCourier
   module Services
     class FakeService
       attr_reader :mail, :options

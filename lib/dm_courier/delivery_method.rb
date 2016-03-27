@@ -1,16 +1,16 @@
-require "rails_courier/service_locator"
+require "dm_courier/service_locator"
 
-module RailsCourier
+module DMCourier
   class DeliveryMethod
-    include RailsCourier::ServiceLocator
-    include RailsCourier::Configurable
+    include DMCourier::ServiceLocator
+    include DMCourier::Configurable
 
     attr_reader :response
 
     def initialize(options = {})
-      RailsCourier::Configurable.keys.each do |key|
+      DMCourier::Configurable.keys.each do |key|
         instance_variable_set(:"@#{key}", options[key] ||
-                              RailsCourier.instance_variable_get(:"@#{key}"))
+                              DMCourier.instance_variable_get(:"@#{key}"))
       end
     end
     alias settings options

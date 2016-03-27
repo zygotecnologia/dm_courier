@@ -1,6 +1,6 @@
-require "rails_courier/default"
+require "dm_courier/default"
 
-module RailsCourier
+module DMCourier
   module Configurable
     attr_accessor :api_key, :service_name, :async, :auto_html, :auto_text, :important,
                   :inline_css, :track_clicks, :track_opens, :track_url_without_query_string,
@@ -21,8 +21,8 @@ module RailsCourier
     end
 
     def reset!
-      RailsCourier::Configurable.keys.each do |key|
-        instance_variable_set(:"@#{key}", RailsCourier::Default.options[key])
+      DMCourier::Configurable.keys.each do |key|
+        instance_variable_set(:"@#{key}", DMCourier::Default.options[key])
       end
 
       self
@@ -34,7 +34,7 @@ module RailsCourier
     end
 
     def options
-      Hash[RailsCourier::Configurable
+      Hash[DMCourier::Configurable
            .keys.map { |key| [key, instance_variable_get(:"@#{key}")] }]
     end
   end
