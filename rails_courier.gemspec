@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "mandrill-api", "~> 1.0.53"
   spec.add_dependency "sparkpost", "~> 0.1.2"
+  spec.add_dependency "sendgrid-ruby", "~> 1.1.6"
   spec.add_dependency "http", "0.9.8"
 
   spec.add_development_dependency "codeclimate-test-reporter", "~> 0.5"

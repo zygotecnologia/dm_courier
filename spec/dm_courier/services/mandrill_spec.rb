@@ -6,7 +6,7 @@ describe DMCourier::Services::Mandrill do
 
   subject { described_class.new(mail, options) }
 
-  it_behaves_like "a rails courier service"
+  it_behaves_like "a dm courier service"
 
   describe "#deliver!" do
     let(:response) { { "key" => "value" } }
