@@ -1,6 +1,6 @@
 require "base64"
 
-module RailsCourier
+module DMCourier
   module Services
     module MessageHelper
       def extract_params(params)

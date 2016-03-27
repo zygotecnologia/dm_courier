@@ -1,11 +1,11 @@
 
-# Rails Courier
+# DM Courier
 
-[![Build Status](https://travis-ci.org/sumoners/rails_courier.svg?branch=master)](https://travis-ci.org/sumoners/rails_courier)
-[![Gem Version](https://badge.fury.io/rb/rails_courier.svg)](http://badge.fury.io/rb/rails_courier)
-[![security](https://hakiri.io/github/sumoners/rails_courier/master.svg)](https://hakiri.io/github/sumoners/rails_courier/master)
-[![Test Coverage](https://codeclimate.com/github/sumoners/rails_courier/badges/coverage.svg)](https://codeclimate.com/github/sumoners/rails_courier/coverage)
-[![Code Climate](https://codeclimate.com/github/sumoners/rails_courier/badges/gpa.svg)](https://codeclimate.com/github/sumoners/rails_courier)
+[![Build Status](https://travis-ci.org/sumoners/dm_courier.svg?branch=master)](https://travis-ci.org/sumoners/dm_courier)
+[![Gem Version](https://badge.fury.io/rb/dm_courier.svg)](http://badge.fury.io/rb/dm_courier)
+[![security](https://hakiri.io/github/sumoners/dm_courier/master.svg)](https://hakiri.io/github/sumoners/dm_courier/master)
+[![Test Coverage](https://codeclimate.com/github/sumoners/dm_courier/badges/coverage.svg)](https://codeclimate.com/github/sumoners/dm_courier/coverage)
+[![Code Climate](https://codeclimate.com/github/sumoners/dm_courier/badges/gpa.svg)](https://codeclimate.com/github/sumoners/dm_courier)
 
 Stick with just one Gem and be free to choose your email delivery service. Rails
 Courier allows you to change easily the deliery method anytime you want.
@@ -15,21 +15,21 @@ Courier allows you to change easily the deliery method anytime you want.
 First, add the gem to your Gemfile and run the `bundle` command to install it.
 
 ```ruby
-gem 'rails_courier'
+gem 'dm_courier'
 ```
 
 Second, set the delivery method in `config/environments/production.rb`.
 
 ```ruby
- config.action_mailer.delivery_method = :rails_courier
+ config.action_mailer.delivery_method = :dm_courier
 ```
 
-Third, create an initializer such as `config/initializers/rails_courier.rb` and
+Third, create an initializer such as `config/initializers/dm_courier.rb` and
 paste in the following code:
 
 ```ruby
-RailsCourier.configure do |config|
-  config.api_key = ENV['RAILS_COURIER_APIKEY']
+DMCourier.configure do |config|
+  config.api_key = ENV['DM_COURIER_APIKEY']
   config.service_name = :mandrill # Choose here the service you want to use
 end
  ```
@@ -53,8 +53,8 @@ end
 
 Option     | Mailer Support | Description
 -----------|----------------|-------------
-`api_key`  | false | Your service API key<br />**Default:** `ENV['RAILS_COURIER_API_KEY']`
-`service_name`  | false | Your service API name.<br />**Default:** `ENV['RAILS_COURIER_SERVICE']`
+`api_key`  | false | Your service API key<br />**Default:** `ENV['DM_COURIER_API_KEY']`
+`service_name`  | false | Your service API name.<br />**Default:** `ENV['DM_COURIER_SERVICE']`
 `async` | false | If the message with be sent asynchronous (depends on the service support)<br />**Default:** false<br />**Services:** mandrill
 `from` | true | A default from address for all emails<br />**Services:** all
 `auto_html` | true |  whether or not to automatically generate an HTML part for messages that are not given HTML<br />**Services:** mandrill

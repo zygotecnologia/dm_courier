@@ -2,12 +2,12 @@ require "sparkpost"
 require "base64"
 
 require "monkey_patch/sparkpost/request"
-require "rails_courier/message_helper"
+require "dm_courier/message_helper"
 
-module RailsCourier
+module DMCourier
   module Services
     class Sparkpost
-      include RailsCourier::Services::MessageHelper
+      include DMCourier::Services::MessageHelper
 
       attr_reader :api_key, :mail, :options
 

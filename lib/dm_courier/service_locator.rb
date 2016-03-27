@@ -1,20 +1,20 @@
-require "rails_courier/services/mandrill"
-require "rails_courier/services/sparkpost"
+require "dm_courier/services/mandrill"
+require "dm_courier/services/sparkpost"
 
-module RailsCourier
+module DMCourier
   module ServiceLocator
     def service
       @service ||= begin
-                     raise RailsCourier::InvalidService unless @service_name
+                     raise DMCourier::InvalidService unless @service_name
 
                      constantize(@service_name)
                    end
     rescue NameError => e
-      raise RailsCourier::InvalidService, e
+      raise DMCourier::InvalidService, e
     end
 
     def constantize(service_name)
-      camel_cased_word = "RailsCourier::Services::#{service_name.to_s.tr('_', ' ').split.map(&:capitalize).join('')}"
+      camel_cased_word = "DMCourier::Services::#{service_name.to_s.tr('_', ' ').split.map(&:capitalize).join('')}"
       names = camel_cased_word.split("::")
 
       Object.const_get(camel_cased_word) if names.empty?
