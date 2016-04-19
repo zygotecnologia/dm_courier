@@ -91,7 +91,7 @@ module DMCourier
         attachments(inline: false).map do |attachment|
           { name: attachment[:name],
             type: attachment[:type],
-            content: attachment[:content] }
+            data: attachment[:content] }
         end
       end
 
@@ -99,7 +99,7 @@ module DMCourier
         attachments(inline: true).map do |attachment|
           { name: attachment[:name],
             type: attachment[:type],
-            content: attachment[:content] }
+            data: attachment[:content] }
         end
       end
     end

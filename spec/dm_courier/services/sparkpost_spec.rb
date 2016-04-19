@@ -48,7 +48,7 @@ describe DMCourier::Services::Sparkpost do
 
         service = described_class.new(mail, options)
         expect(service.sparkpost_message[:content][:attachments]).to eq(
-          [{ name: "text.txt", type: "text/plain", content: "VGhpcyBpcyBhIHRlc3Q=\n" }]
+          [{ name: "text.txt", type: "text/plain", data: "VGhpcyBpcyBhIHRlc3Q=\n" }]
         )
       end
 
@@ -168,7 +168,7 @@ describe DMCourier::Services::Sparkpost do
         expect(service.sparkpost_message[:content][:inline_images]).to eq(
           [{ name: mail.attachments[0].cid,
              type: "image/jpg",
-             content: "VGhpcyBpcyBhIHRlc3Q=\n" }]
+             data: "VGhpcyBpcyBhIHRlc3Q=\n" }]
         )
       end
 
