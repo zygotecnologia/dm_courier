@@ -76,6 +76,10 @@ module DMCourier
       def from
         nil
       end
+
+      def return_response
+        true
+      end
     end
   end
 end
