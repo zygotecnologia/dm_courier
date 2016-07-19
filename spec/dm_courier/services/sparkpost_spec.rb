@@ -20,7 +20,7 @@ describe DMCourier::Services::Sparkpost do
     end
 
     it "instantiates the sparkpost API with the configured key" do
-      expect(SimpleSpark::Client).to receive(:new).with(options[:api_key]).and_return(api)
+      expect(SimpleSpark::Client).to receive(:new).with(api_key: options[:api_key]).and_return(api)
 
       subject.deliver!
     end

@@ -21,7 +21,7 @@ module DMCourier
       end
 
       def deliver!
-        sparkpost = ::SimpleSpark::Client.new(api_key)
+        sparkpost = ::SimpleSpark::Client.new(api_key: api_key)
 
         sparkpost.transmissions.create(sparkpost_message)
       end
