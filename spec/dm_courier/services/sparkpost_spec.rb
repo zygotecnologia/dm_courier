@@ -11,23 +11,22 @@ describe DMCourier::Services::Sparkpost do
   describe "#deliver!" do
     let(:response) { { "key" => "value" } }
 
-    let(:endpoint) { "sparkpost/endpoint" }
-    let(:api_transmission) { instance_double(SparkPost::Transmission, request: response, endpoint: endpoint) }
-    let(:api) { instance_double(SparkPost::Client, transmission: api_transmission) }
+    let(:api_transmission) { instance_double(SimpleSpark::Endpoints::Transmissions, create: response) }
+    let(:api) { instance_double(SimpleSpark::Client, transmissions: api_transmission) }
 
     before(:each) do
-      allow(SparkPost::Client).to receive(:new).and_return(api)
+      allow(SimpleSpark::Client).to receive(:new).and_return(api)
       allow(subject).to receive(:sparkpost_message).and_return("some options")
     end
 
     it "instantiates the sparkpost API with the configured key" do
-      expect(SparkPost::Client).to receive(:new).with(options[:api_key]).and_return(api)
+      expect(SimpleSpark::Client).to receive(:new).with(options[:api_key]).and_return(api)
 
       subject.deliver!
     end
 
     it "sends the JSON version of SparkPost message via the API" do
-      expect(api_transmission).to receive(:request).with(endpoint, options[:api_key], "some options")
+      expect(api_transmission).to receive(:create).with("some options")
 
       subject.deliver!
     end

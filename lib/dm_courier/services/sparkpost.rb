@@ -1,7 +1,6 @@
-require "sparkpost"
+require "simple_spark"
 require "base64"
 
-require "monkey_patch/sparkpost/request"
 require "dm_courier/message_helper"
 
 module DMCourier
@@ -22,10 +21,9 @@ module DMCourier
       end
 
       def deliver!
-        sparkpost = ::SparkPost::Client.new(api_key)
-        transmission = sparkpost.transmission
+        sparkpost = ::SimpleSpark::Client.new(api_key)
 
-        transmission.send(:request, transmission.endpoint, api_key, sparkpost_message)
+        sparkpost.transmissions.create(sparkpost_message)
       end
 
       def sparkpost_message
