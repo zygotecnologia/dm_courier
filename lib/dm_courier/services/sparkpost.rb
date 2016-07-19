@@ -53,6 +53,7 @@ module DMCourier
         message[:content][:text] = text_part if text_part
 
         message[:recipients] = recipients
+        message[:metadata] = metadata
 
         message[:content][:attachments] = regular_attachments if attachments?(inline: false)
         message[:content][:inline_images] = inline_attachments if attachments?(inline: true)

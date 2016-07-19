@@ -1,4 +1,5 @@
 require "base64"
+require "json"
 
 module DMCourier
   module Services
@@ -21,6 +22,10 @@ module DMCourier
 
       def from_email
         from.address if from_address
+      end
+
+      def metadata
+        JSON.parse(mail[:metadata].value) if mail[:metadata]
       end
 
       def from_name
