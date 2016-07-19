@@ -2,6 +2,7 @@ require "simple_spark"
 require "base64"
 
 require "dm_courier/message_helper"
+require "monkey_patch/sparkpost/client"
 
 module DMCourier
   module Services
