@@ -80,6 +80,14 @@ module DMCourier
       def return_response
         true
       end
+
+      def ip_pool
+        nil
+      end
+
+      def campaign_id
+        nil
+      end
     end
   end
 end

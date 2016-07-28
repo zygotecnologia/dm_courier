@@ -31,12 +31,16 @@ module DMCourier
         parameters = extract_params(nil_true_false: { inline_css: :inline_css,
                                                       click_tracking: :track_clicks,
                                                       open_tracking: :track_opens },
-                                    string: { return_path: :return_path_domain })
+                                    string: { return_path: :return_path_domain,
+                                              ip_pool: :ip_pool,
+                                              campaign_id: :campaign_id })
 
         message = { options: {} }
         message[:options][:inline_css] = parameters[:inline_css] unless parameters[:inline_css].nil?
         message[:options][:click_tracking] = parameters[:click_tracking] unless parameters[:click_tracking].nil?
         message[:options][:open_tracking] = parameters[:open_tracking] unless parameters[:open_tracking].nil?
+        message[:options][:ip_pool] = parameters[:ip_pool] unless parameters[:ip_pool].nil?
+        message[:options][:campaign_id] = parameters[:ip_pool] unless parameters[:campaign_id].nil?
 
         message[:return_path] = parameters[:return_path] unless parameters[:return_path].nil?
 
