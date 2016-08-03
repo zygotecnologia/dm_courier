@@ -40,7 +40,8 @@ module DMCourier
         message[:options][:click_tracking] = parameters[:click_tracking] unless parameters[:click_tracking].nil?
         message[:options][:open_tracking] = parameters[:open_tracking] unless parameters[:open_tracking].nil?
         message[:options][:ip_pool] = parameters[:ip_pool] unless parameters[:ip_pool].nil?
-        message[:options][:campaign_id] = parameters[:ip_pool] unless parameters[:campaign_id].nil?
+
+        message[:campaign_id] = parameters[:campaign_id] unless parameters[:campaign_id].nil?
 
         message[:return_path] = parameters[:return_path] unless parameters[:return_path].nil?
 
