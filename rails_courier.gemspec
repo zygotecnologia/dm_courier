@@ -25,16 +25,17 @@ Gem::Specification.new do |spec|
   spec.required_rubygems_version = ">= 2.4.5"
 
   # spec.add_dependency "mandrill-api", "~> 1.0.53"
-  spec.add_dependency "simple_spark", "~> 1.0.2"
+  spec.add_dependency "simple_spark", "~> 1.0.6"
   spec.add_dependency "sendgrid-ruby", "~> 1.1.6"
   spec.add_dependency "http", "0.9.8"
+  spec.add_dependency "json", "~> 2.0"
 
   spec.add_development_dependency "codeclimate-test-reporter", "~> 0.5"
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rspec", "~> 3.4"
   spec.add_development_dependency "mail", "~> 2.6"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "simplecov", "~> 0.11"
+  spec.add_development_dependency "simplecov", "~> 0.15"
   spec.add_development_dependency "rubocop", "~> 0.36"
   spec.add_development_dependency "pry"
 end
