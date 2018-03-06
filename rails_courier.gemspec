@@ -5,8 +5,8 @@ require "dm_courier/version"
 Gem::Specification.new do |spec|
   spec.name          = "dm_courier"
   spec.version       = DMCourier::VERSION.dup
-  spec.authors       = ["Jaison Erick"]
-  spec.email         = ["jaisonreis@gmail.com"]
+  spec.authors       = ["Jaison Erick", "João Paulo Lethier"]
+  spec.email         = ["jaisonreis@gmail.com", 'jplethier@gmail.com']
 
   spec.summary       = "A delivery method that abstract the most common email delivery APIs"
   spec.description   = "A delivery method that abstract the most common email delivery APIs"
@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.required_ruby_version = ">= 2.2.0"
+  spec.required_ruby_version = ">= 2.4.0"
   spec.required_rubygems_version = ">= 2.4.5"
 
   spec.add_dependency "mandrill-api", "~> 1.0.53"
