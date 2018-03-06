@@ -5,8 +5,8 @@ require "dm_courier/version"
 Gem::Specification.new do |spec|
   spec.name          = "dm_courier"
   spec.version       = DMCourier::VERSION.dup
-  spec.authors       = ["Jaison Erick"]
-  spec.email         = ["jaisonreis@gmail.com"]
+  spec.authors       = ["Jaison Erick", "Joao Paulo Lethier"]
+  spec.email         = ["jaisonreis@gmail.com", "jplethier@gmail.com"]
 
   spec.summary       = "A delivery method that abstract the most common email delivery APIs"
   spec.description   = "A delivery method that abstract the most common email delivery APIs"
@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.required_rubygems_version = ">= 2.4.5"
 
   spec.add_dependency "mandrill-api", "~> 1.0.53"
-  spec.add_dependency "simple_spark", "~> 1.0.2"
+  spec.add_dependency "simple_spark", "~> 1.0.6"
   spec.add_dependency "sendgrid-ruby", "~> 1.1.6"
   spec.add_dependency "http", "0.9.8"
 
